@@ -1,0 +1,24 @@
+1. Struct
+
+2. File
+
+3. Sort
+(basic)
+-buble (*)
+-selection
+-insertion
+
+(advance)
+- quick
+- merge (*)
+
+4. Searching
+- Linear
+- Binary
+- Interpolation
+
+QUIZ 2:
+CinemaMerge.c 
+CinemaSort.c 
+RankMergeSocs.c 
+RankSOCS.c 
