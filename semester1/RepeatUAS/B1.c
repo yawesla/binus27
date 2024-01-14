@@ -5,17 +5,25 @@ int main()
     int N, A[1001], freq[1001] = {0};
     FILE *fp = fopen("C:/Users/user/OneDrive/Kuliah/sem1/socs1/RepeatUAS/B.txt", "r");
 
-    int r = 0;
-    while (fscanf(fp, "%d", &N) == 1)
-    {
+   // int r = 0;
+    // while (fscanf(fp, "%d", &N) == 1)
+    // {
 
-        for (int i = 0; i < N; i++)
+    //     for (int i = 0; i < N; i++)
+    //     {
+    //         fscanf(fp, "%d", &A[i]);
+    //         freq[A[i]]++;
+    //     }
+    //     r++;
+    // }
+
+    //Scan atas dan bawah sama sama works
+    fscanf(fp, "%d", &N);
+    for (int i = 0; i < N; i++)
         {
             fscanf(fp, "%d", &A[i]);
             freq[A[i]]++;
         }
-        r++;
-    }
 
     // Mencari Modus
     int modus = -1;
