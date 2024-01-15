@@ -18,7 +18,11 @@ int main()
     //     r++;
     // }
 
+<<<<<<< HEAD:semester1/RepeatUAS1/B1.c
     
+=======
+    //Scanf atas sama bawah sama bisa
+>>>>>>> 867c3957cf03eaef74f7bc01e1297d2db80260a5:semester1/RepeatUAS/B1.c
     fscanf(fp,"%d",&N);
     for(int i = 0;i<N;i++){
         fscanf(fp,"%d",&A[i]);
