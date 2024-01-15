@@ -5,17 +5,11 @@ int main()
     int N,A[1001], total =0;
     FILE *fp = fopen("C:/Users/user/OneDrive/Kuliah/sem1/socs1/RepeatUAS/B.txt", "r");
 
-    int r = 0;
-    while (!feof(fp))
-    {
-        fscanf(fp, "%d", &N);
+    fscanf(fp,"%d",&N);
 
-        for (int i = 0; i < N; i++)
-        {
-            fscanf(fp, "%d", &A[i]);
-            total += A[i];
-        }
-        r++;
+    for(int i =0;i<N;i++){
+        fscanf(fp,"%d",&A[i]);
+        total += A[i];
     }
 
     // Display

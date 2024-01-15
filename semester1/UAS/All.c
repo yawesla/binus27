@@ -10,21 +10,24 @@ typedef struct data
 
 list kecantikan[100];
 
-int binarySearchName(list arr[], int low, int high, const char *target) {
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-        int cmp = strcmp(arr[mid].nama, target);
+// int binarySearchName(list arr[], int low, int high, const char *target) {
+//     while (low <= high) {
+//         int mid = low + (high - low) / 2;
+//         int cmp = strcmp(arr[mid].nama, target);
 
-        if (cmp == 0)
-            return mid;
-        else if (cmp < 0)
-            low = mid + 1;
-        else
-            high = mid - 1;
-    }
+//         if (cmp != 0){
+//             printf("masuk: %d\n",mid+1);
+//             printf("%s %s\n",arr[mid+1].nama,target);
+//             return mid+1; //found the target
+//         }
+//         else if (cmp < 0)
+//             low = mid + 1; 
+//         else
+//             high = mid - 1;
+//     }
 
-    return -1;
-}
+//     return -1;
+// }
 
 void merge(list arr[], int left, int mid, int right) // arrnya menjasi list kalo mau sort obj
 {
@@ -101,11 +104,14 @@ int main()
     while (!feof(fp))
     {
         fscanf(fp, "%d", &tc);
+        // getchar();
         for (int i = 0; i < tc; i++)
         {
             fscanf(fp, "%[^#]#%d", kecantikan[i].nama, &kecantikan[i].num);
+            // getchar();
         }
         fscanf(fp, "%d %s", &posisi, target);
+        // getchar();
         r++;
     }
 
@@ -146,7 +152,7 @@ int main()
     for (int i = 0; i < tc; i++)
     {
         printf("Index %d %s %s\n",i,kecantikan[i].nama, target);
-        if (!strcmp(kecantikan[i].nama, target))
+        if (!strcmp(target,kecantikan[i].nama))
         {
             printf("MASUKKKK KONDISI TOTTT");
             res2 = i + 1;

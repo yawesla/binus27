@@ -40,7 +40,7 @@ int main() {
 
     // Menampilkan hasil pengurutan
     for (int i = 0; i < N; i++) {
-        printf("Hasil : %s\n", strings[i].str);
+        printf("Hasil : %s [%d]\n", strings[i].str,strings[i].consonantCount);
     }
 
     return 0;

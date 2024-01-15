@@ -1,4 +1,4 @@
-void merge(int arr[], int left, int mid, int right)
+void mergeSort(int arr[], int left, int mid, int right)
 {
     int n1 = mid - left + 1; // Corrected index calculation
     int n2 = right - mid;
@@ -49,7 +49,7 @@ void merge(int arr[], int left, int mid, int right)
     }
 }
 
-void mergeSort(int arr[], int left, int right)
+void merge(int arr[], int left, int right)
 {
 
     if (right == left)
@@ -58,9 +58,12 @@ void mergeSort(int arr[], int left, int right)
     }
 
     int mid = left + (right - left) / 2;
-    mergeSort(arr, left, mid);
-    mergeSort(arr, mid + 1, right);
-    merge(arr, left, mid, right);
+    merge(arr, left, mid);
+    merge(arr, mid + 1, right);
+    mergeSort(arr, left, mid, right);
 }
 
-//yg dipanggil di main mergeSort(array, 0,n-1 / tc-1)
+//yg dipanggil di main merge(array, 0,n-1 / tc-1)
+// int main(){
+//     merge(arr,0,tc-1);
+// }

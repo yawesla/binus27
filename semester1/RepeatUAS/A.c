@@ -7,6 +7,7 @@ typedef struct data
     int score;
 } list;
 
+
 int main()
 {
     int N, M;
@@ -14,12 +15,13 @@ int main()
 
     list S[N];
 
-    for (int i = 0; i < N; i++)
+     for (int i = 0; i < N; i++)
     {
         scanf("%s", S[i].num);
         // Hitung Score dari char
         int cantik = 0;
-        for(int j = 0; S[i].num[j] != '\0';j++){
+        // kondisi j<M --> S[i].num[j] != '\0'
+        for(int j = 0; j<M;j++){
             cantik += S[i].num[j] - '0';
         }
         S[i].score = cantik;

@@ -41,7 +41,7 @@ int main()
     //display
     for (int i = 0; i < N; i++)
     {
-        printf("Hasil: %s %d\n", S[i].num, S[i].score);
+        printf("Hasil: %s [%d]\n", S[i].num, S[i].score);
     }
 
     return 0;

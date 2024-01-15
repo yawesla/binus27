@@ -28,7 +28,7 @@ int binarySearch(int arr[], int l, int r, int target) {
 
         if (arr[mid] == target) {
             result = mid;
-            l = mid + 1; // Find the largest index, so move to the right
+            l = mid + 1; // Find the largest index, so move to the right **opsional
         } else if (arr[mid] < target) {
             l = mid + 1;
         } else {
