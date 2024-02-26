@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: url("assets/home.jpg") no-repeat center center fixed;
+  background-size: cover;
+  transition: background-image 0.5s ease; /* Add a smooth transition effect */
+}
+
+header {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px); /* Add a blurry effect */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 12%; /* Ensure the image doesn't exceed its container */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 20px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list li {
+  margin-right: 50px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.6em; /* Adjust the font size as needed */
+  font-weight: bold;
+}
+
+/* Style for navigation links on hover */
+.nav-list a:hover {
+  text-decoration: underline;
+}
+
+/* Style for the yellow box in the Subscription link */
+.subscribe {
+  background-color: rgba(255, 0, 21, 0.5); /* 50% opacity */
+  padding: 5px 10px; /* Adjust padding as needed */
+  border-radius: 5px; /* Optional: add rounded corners */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-description {
+  height: 22vh; /* Adjusted height */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Slightly transparent black background */
+  backdrop-filter: blur(15px); /* Increased blurry effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Added padding */
+  margin-top: 10px;
+}
+
+.home-description h1 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
