@@ -158,10 +158,8 @@ TreeNode *delete(TreeNode *curr, int del)
 	// Base Case Recursive
 	if (curr == NULL)
 		return NULL;
-	else if (del > curr->key)
-		curr->right = delete (curr->right, del);
-	else if (del < curr->key)
-		curr->left = delete (curr->left, del);
+	else if (del < curr->key) curr->left = delete (curr->left, del);
+	else if (del > curr->key) curr->right = delete (curr->right, del);
 	else // Ketika Nilai sama dengan value
 	{
 		// No Child
