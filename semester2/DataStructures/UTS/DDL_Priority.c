@@ -106,7 +106,6 @@ void popHead()
     }
 }
 
-
 // Kondisi Jika menggunakan PopTail
 void popTail()
 {
@@ -132,7 +131,6 @@ void popTail()
         tail->next = NULL;
     }
 }
-
 
 void view()
 {

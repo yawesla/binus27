@@ -85,12 +85,12 @@ int height(TreeNode *node)
 	int rightHeight = height(node->right);
 
 	// Return the maximum height of the left and right subtrees plus 1 for the current node
-	// int maxHeight = (leftHeight > rightHeight) ? leftHeight : rightHeight;
-	int maxHeight;
-	if (leftHeight > rightHeight)
-		maxHeight = leftHeight;
-	else
-		maxHeight = rightHeight;
+	int maxHeight = (leftHeight > rightHeight) ? leftHeight : rightHeight;
+	// int maxHeight;
+	// if (leftHeight > rightHeight)
+	// 	maxHeight = leftHeight;
+	// else
+	// 	maxHeight = rightHeight;
 
 	return (1 + maxHeight);
 }
@@ -135,9 +135,9 @@ TreeNode *search(TreeNode *curr, int find)
 	}
 
 	// If the key being searched for is less than the current node's key, search the left subtree
-	if (curr->key > find) return search(curr->left, find);
+	if ( find < curr->key) return search(curr->left, find);
 	// If the key being searched for is greater than the current node's key, search the right subtree
-	else if (curr->key < find) return search(curr->right, find);
+	else if (find > curr->key) return search(curr->right, find);
 
 	return curr;
 }
@@ -148,7 +148,7 @@ TreeNode *findPredecessor(TreeNode *curr) //sama seperti findMax tapi tipe data 
 	if (curr == NULL)
 		return NULL;
 	if (curr->right == NULL)
-		return curr;
+		return curr; // beda di sini dengan return curr
 
 	return findPredecessor(curr->right);
 }
