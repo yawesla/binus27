@@ -80,8 +80,10 @@ void inputdata(int id)
         temp = head;
         while (temp->next != NULL && strcmp(temp->due_date, newnode->due_date) < 0)
             temp = temp->next;
+
         temp->next->prev = newnode;
         newnode->next = temp->next;
+        
         newnode->prev = temp;
         temp->next = newnode;
     }

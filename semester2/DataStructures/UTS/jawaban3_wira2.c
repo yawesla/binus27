@@ -174,12 +174,13 @@ TreeNode *delete(TreeNode *curr, int del)
 		// 1 Child
 		else if (curr->left == NULL || curr->right == NULL)
 		{
-			TreeNode *temp;
-			if (curr->left)
-				temp = curr->left;
-			else
-				temp = curr->right;
+			// TreeNode *temp;
+			// if (curr->left)
+			// 	temp = curr->left;
+			// else
+			// 	temp = curr->right;
 
+			TreeNode *temp = (curr->left) ? curr->left : curr->right;
 			free(curr);
 			return temp;
 		}

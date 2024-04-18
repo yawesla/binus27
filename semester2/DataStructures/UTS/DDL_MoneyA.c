@@ -30,6 +30,7 @@ void insertNode(char category[], char detail[], int amount)
     newNode->next = NULL;
     newNode->prev = NULL;
 
+    // Push Tail
     // Check if the list is empty
     if (head == NULL)
     {
