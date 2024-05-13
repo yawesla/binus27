@@ -1,17 +1,20 @@
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
-  background: url("assets/home.jpg") no-repeat center center fixed;
+  /* background: url("assets/background-stars.jpg") no-repeat center center fixed; */
+  background-color: rgb(17, 11, 25);
   background-size: cover;
   transition: background-image 0.5s ease; /* Add a smooth transition effect */
 }
 
 header {
-  background-color: transparent;
+  background-color: rgb(27, 24, 38);
   color: #ffffff;
   padding: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px); /* Add a blurry effect */
+  z-index: 10;
+  /* margin-bottom: 10px; */
 }
 
 .navbar {
@@ -56,39 +59,227 @@ header {
   border-radius: 5px; /* Optional: add rounded corners */
 }
 
-.content {
+.container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh; /* Gunakan min-height agar container selalu mencakup tinggi layar, bahkan ketika konten tidak sebanyak 100vh */
+}
+
+/* Card */
+.card {
+  display: flex; /* Make the card body a flex container */
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.75rem;
+  background-color: #2c2e3f; /* Fallback color */
+  max-width: 1400px;
+  margin: 0 auto;
+  backdrop-filter: blur(5px); /* Blurry effect */
+  color: white; /* Set font color to white */
+  margin-top: 40px;
+}
+
+.card-header {
+  flex: 1; /* Allow the header to grow as needed */
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-body {
+  display: flex; /* Enable flexbox for the card body */
+  flex: 1; /* Allow the body to grow as needed */
+  flex-grow: 1; /* Allow content to grow and fill available space */
+  /* padding: 1.25rem; */
+}
+
+.card-description {
+  width: 50%; /* Set width for description container */
+  padding: 20px; /* Add padding for spacing */
+}
+
+.card-title {
+  font-size: 2rem; /* Increase the title font size */
+  font-weight: bold; /* Make the title bold */
+  margin-top: 20px;
+}
+
+.card-text {
+  font-size: 1.2rem; /* Increase the text font size */
+  line-height: 1.6; /* Adjust line height for better readability */
+  margin-bottom: 1.5rem; /* Adjust margin bottom */
+}
+
+.download {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #c3c3c3;
+  border-radius: 0.25rem;
+  background-color: #c9d5e1; /* Light background color */
+  color: #000; /* Black text color */
+  margin-top: 50px;
+}
+
+.download .btn {
+  margin-left: auto; /* Push the button to the right */
+  border-radius: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
   text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-primary {
   color: #fff;
+  background-color: rgb(174, 28, 40);
+  border-color: rgb(174, 28, 40);
 }
 
-.home {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.btn-primary:hover {
+  color: #fff;
+  background-color: rgb(114, 17, 25);
+  border-color: rgb(114, 17, 25);
 }
 
-.home-description {
-  height: 22vh; /* Adjusted height */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.7
-  ); /* Slightly transparent black background */
-  backdrop-filter: blur(15px); /* Increased blurry effect */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px; /* Added padding */
-  margin-top: 10px;
+.requirements {
+  flex: 1; /* Make requirements sections take up equal space */
+  padding: 15px;
 }
 
-.home-description h1 {
-  margin-left: 20px;
-  margin-right: 20px;
+.requirements-title {
+  font-size: 1.5rem; /* Increase the title font size */
+  font-weight: bold; /* Make the title bold */
+  margin-bottom: 1rem; /* Adjust margin bottom */
+}
+
+.requirements-list {
+  margin-bottom: 5px;
+}
+
+.requirements-list li {
+  line-height: 1.5;
+}
+
+/* Carousel */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container-carousel {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(27, 24, 38);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 100px; /* Tambahkan margin top agar tidak menempel dengan card */
+}
+
+.container-footer {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  margin: 0 auto;
+}
+
+footer p {
+  margin: 0;
+  color: #6c757d;
 }
