@@ -1,28 +1,70 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+// ========= Download Function ==========
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+// ========= Slideshow Function ==========
+// Next/previous controls
+function plusSlides(n, carouselId) {
+  showSlides((slideIndex[carouselId] += n), carouselId);
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+// Thumbnail image controls
+function currentSlide(n, carouselId) {
+  showSlides((slideIndex[carouselId] = n), carouselId);
 }
 
-function showSlides(n) {
+function showSlides(n, carouselId) {
   let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  let slides = document.querySelectorAll(`#${carouselId} .carousel-item`);
+
+  if (n >= slides.length) {
+    slideIndex[carouselId] = 0;
+  }
+  if (n < 0) {
+    slideIndex[carouselId] = slides.length - 1;
+  }
+
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
+
+  slides[slideIndex[carouselId]].style.display = "block";
 }
+
+// Initialize slides for each carousel
+let slideIndex = {};
+
+// Initialize S-Class carousel
+slideIndex["s-class-carousel"] = 0;
+showSlides(slideIndex["s-class-carousel"], "s-class-carousel");
+
+// Initialize A-Class carousel
+slideIndex["a-class-carousel"] = 0;
+showSlides(slideIndex["a-class-carousel"], "a-class-carousel");
+
+// Initialize S-Class carousel
+slideIndex["b-class-carousel"] = 0;
+showSlides(slideIndex["b-class-carousel"], "b-class-carousel");
+
+// Initialize A-Class carousel
+slideIndex["c-class-carousel"] = 0;
+showSlides(slideIndex["c-class-carousel"], "c-class-carousel");
+
+// Initialize S-Class carousel
+slideIndex["d-class-carousel"] = 0;
+showSlides(slideIndex["d-class-carousel"], "d-class-carousel");
+
+// ========= Readtime Function ==========
+
+// ========= See More Function ==========
+function toggleDescription() {
+  const fullDescription = document.querySelector(".full-description");
+  const seeMoreBtn = document.querySelector(".see-more-btn");
+  if (fullDescription.style.display === "none") {
+    fullDescription.style.display = "block";
+    seeMoreBtn.textContent = "See less";
+  } else {
+    fullDescription.style.display = "none";
+    seeMoreBtn.textContent = "See more";
+  }
+}
+
+// ========= Form validation ==========

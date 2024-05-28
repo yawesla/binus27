@@ -1,12 +1,11 @@
-<!-- home.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
-    <title>Your Page Title</title>
+    <script src="script.js" defer></script>
+    <title>Asphatl 9: Rejends</title>
   </head>
   <body>
     <header>
@@ -17,72 +16,284 @@
         <ul class="nav-list">
           <li><a href="home.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="tes.html">Event</a></li>
+          <li><a href="event.html">Event</a></li>
           <li><a href="news.html">News</a></li>
           <li><a class="subscribe" href="subscribe.html">Subscribe</a></li>
         </ul>
       </nav>
     </header>
 
-    <section class="container">
+    <div class="product-container">
+      <div class="carousel-header">
+        <div class="carousel-title">Our Car List</div>
+      </div>
+    </div>
+
+    <!-- S-Class Carousel -->
+    <section class="product-container">
       <div class="card">
-        <div class="card-header">
-          <div class="card-title">S - Class</div>
-          <div class="card-body">
-            <div class="container-carousel">
-                <div class="mySlides">
-                  <div class="numbertext">1 / 3</div>
-                  <img src="assets/home.jpg" style="width: 100%" />
-                </div>
-        
-                <div class="mySlides">
-                  <div class="numbertext">2 / 3</div>
-                  <img src="assets/home1.jpg" style="width: 100%" />
-                </div>
-        
-                <div class="mySlides">
-                  <div class="numbertext">3 / 3</div>
-                  <img src="assets/home2.jpg" style="width: 100%" />
-                </div>
-        
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-        
-                <div class="caption-container">
-                  <p id="caption"></p>
-                </div>
-        
-                <div class="row">
-                  <div class="column">
-                    <img
-                      class="demo cursor"
-                      src="assets/home.jpg"
-                      style="width: 100%"
-                      onclick="currentSlide(1)"
-                      alt="The Woods"
-                    />
-                  </div>
-                  <div class="column">
-                    <img
-                      class="demo cursor"
-                      src="assets/home1.jpg"
-                      style="width: 100%"
-                      onclick="currentSlide(2)"
-                      alt="Cinque Terre"
-                    />
-                  </div>
-                  <div class="column">
-                    <img
-                      class="demo cursor"
-                      src="assets/home2.jpg"
-                      style="width: 100%"
-                      onclick="currentSlide(3)"
-                      alt="Mountains and fjords"
-                    />
-                  </div>
+        <div class="carousel-header">
+          <div class="carousel-title">S - Class</div>
+        </div>
+        <div class="card-body">
+          <div class="carousel" id="s-class-carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img
+                  src="assets/koenigsegg-jesko.webp"
+                  alt="Koenigsegg Jesko"
+                />
+                <div class="carousel-caption">
+                  <h5>Koenigsegg Jesko</h5>
                 </div>
               </div>
-            
+              <div class="carousel-item">
+                <img src="assets/Lamborghini-Sian-FKP-37.webp" alt="Lamborghini Sian FKP 37" />
+                <div class="carousel-caption">
+                  <h5>Lamborghini Sian FKP 37</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/McLaren-Speedtail.webp" alt="McLaren Speedtail" />
+                <div class="carousel-caption">
+                  <h5>McLaren Speedtail</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Bugatti-Centodieci.webp" alt="Bugatti Centodieci" />
+                <div class="carousel-caption">
+                  <h5>Bugatti Centodieci</h5>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              onclick="plusSlides(-1, 's-class-carousel')"
+            >
+              ❮
+            </button>
+            <button
+              class="carousel-control-next"
+              onclick="plusSlides(1, 's-class-carousel')"
+            >
+              ❯
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A-Class Carousel -->
+    <section class="product-container">
+      <div class="card">
+        <div class="carousel-header">
+          <div class="carousel-title">A - Class</div>
+        </div>
+        <div class="card-body">
+          <div class="carousel" id="a-class-carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img
+                  src="assets/Nissan-GT-R-Nismo.webp"
+                  alt="Nissan GT R Nismo"
+                />
+                <div class="carousel-caption">
+                  <h5>Nissan GT R Nismo</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Aston-Martin-Vulcan.webp" alt="Aston Martin Vulcan" />
+                <div class="carousel-caption">
+                  <h5>Aston Martin Vulcan</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Dodge-Viper-GTS.webp" alt="Dodge Viper GTS" />
+                <div class="carousel-caption">
+                  <h5>Dodge Viper GTS</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Bentley-Continental-GT-Speed.webp" alt="Bentley Continental GT Speed" />
+                <div class="carousel-caption">
+                  <h5>Bentley Continental GT Speed</h5>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              onclick="plusSlides(-1, 'a-class-carousel')"
+            >
+              ❮
+            </button>
+            <button
+              class="carousel-control-next"
+              onclick="plusSlides(1, 'a-class-carousel')"
+            >
+              ❯
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B-Class  -->
+    <section class="product-container">
+      <div class="card">
+        <div class="carousel-header">
+          <div class="carousel-title">B - Class</div>
+        </div>
+        <div class="card-body">
+          <div class="carousel" id="b-class-carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img
+                  src="assets/Porsche-911-GT1-Evolution.webp"
+                  alt="Porsche 911 GT1 Evolution"
+                />
+                <div class="carousel-caption">
+                  <h5>Porsche 911 GT1 Evolution</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Jaguar-F-Type-SVR.webp" alt="Jaguar F-Type SVR" />
+                <div class="carousel-caption">
+                  <h5>Jaguar F-Type SVR</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Ferrari-488-GTB.webp" alt="Ferrari 488 GTB" />
+                <div class="carousel-caption">
+                  <h5>Ferrari 488 GTB</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/McLaren-GT.webp" alt="McLaren GT" />
+                <div class="carousel-caption">
+                  <h5>McLaren GT</h5>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              onclick="plusSlides(-1, 'b-class-carousel')"
+            >
+              ❮
+            </button>
+            <button
+              class="carousel-control-next"
+              onclick="plusSlides(1, 'b-class-carousel')"
+            >
+              ❯
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C-Class  -->
+    <section class="product-container">
+      <div class="card">
+        <div class="carousel-header">
+          <div class="carousel-title">C - Class</div>
+        </div>
+        <div class="card-body">
+          <div class="carousel" id="c-class-carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img
+                  src="assets/Renault-R.S.-01.webp"
+                  alt="Renault R.S. 01"
+                />
+                <div class="carousel-caption">
+                  <h5>Renault R.S. 01</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Arrinera-Hussarya-33.webp" alt="Arrinera Hussarya 33" />
+                <div class="carousel-caption">
+                  <h5>Arrinera Hussarya 33</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Bentley-Mullinger-Bacalar.webp" alt="Bentley Mullinger Bacalar" />
+                <div class="carousel-caption">
+                  <h5>Bentley Mullinger Bacalar</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Chevrolet-Corvette-Stingray.webp" alt="Chevrolet Corvette Stingray" />
+                <div class="carousel-caption">
+                  <h5>Chevrolet Corvette Stingray</h5>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              onclick="plusSlides(-1, 'c-class-carousel')"
+            >
+              ❮
+            </button>
+            <button
+              class="carousel-control-next"
+              onclick="plusSlides(1, 'c-class-carousel')"
+            >
+              ❯
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- D-CLass  -->
+    <section class="product-container">
+      <div class="card">
+        <div class="carousel-header">
+          <div class="carousel-title">D - Class</div>
+        </div>
+        <div class="card-body">
+          <div class="carousel" id="d-class-carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img
+                  src="assets/Lotus-Emira.webp"
+                  alt="Lotus Emira"
+                />
+                <div class="carousel-caption">
+                  <h5>Lotus Emira</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Ford-Shelby-GT350R.webp" alt="Ford Shelby GT350R" />
+                <div class="carousel-caption">
+                  <h5>Ford Shelby GT350R</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/BMW-Z4-LCI-E89.webp" alt="BMW Z4 LCI E89" />
+                <div class="carousel-caption">
+                  <h5>BMW Z4 LCI E89</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/Nissan-Leaf-Nismo-RC.webp" alt="Nissan Leaf Nismo RC" />
+                <div class="carousel-caption">
+                  <h5>Nissan Leaf Nismo RC</h5>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              onclick="plusSlides(-1, 'd-class-carousel')"
+            >
+              ❮
+            </button>
+            <button
+              class="carousel-control-next"
+              onclick="plusSlides(1, 'd-class-carousel')"
+            >
+              ❯
+            </button>
           </div>
         </div>
       </div>

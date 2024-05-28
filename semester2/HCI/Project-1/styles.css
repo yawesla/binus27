@@ -174,97 +174,132 @@ header {
   line-height: 1.5;
 }
 
-/* Carousel */
-* {
+/* Product Page - Carousel */
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; Gunakan min-height agar container selalu mencakup tinggi layar, bahkan ketika konten tidak sebanyak 100vh */
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-header {
+  flex: 1; /* Allow the header to grow as needed */
+  text-align: center;
+  display: flex; /* Add display flex */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.carousel-title {
+  font-size: 2rem; /* Increase the title font size */
+  font-weight: bold; /* Make the title bold */
+  margin-top: 20px;
+  color: white;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
   box-sizing: border-box;
-}
-
-img {
-  vertical-align: middle;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container-carousel {
+  text-align: center;
   position: relative;
 }
 
-/* Hide the images by default */
-.mySlides {
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5em;
+  border-radius: 5px;
+  width: fit-content;
+  text-align: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+/* Event */
+.image-container {
+  flex: 0 0 50%; 
+  max-width: 50%;
+  overflow: hidden; 
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container */
+}
+
+/* Details container */
+.details-container-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px; /* Space above the details */
+}
+
+.event-date,
+.read-time {
+  font-size: 0.875rem;
+  color: #ccc; /* Muted color for the details */
+}
+
+.hidden {
   display: none;
 }
 
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
+.see-more-btn {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  background-color: rgb(174, 28, 40);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
+.see-more-btn:hover {
+  background-color: rgb(174, 28, 40);
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
 
 /* Footer */
 footer {
