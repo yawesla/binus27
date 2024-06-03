@@ -1,4 +1,9 @@
 // ========= Download Function ==========
+function downlaod() {
+
+  // Show alert after form submission
+  alert("Game is Downloaded!");
+}
 
 // ========= Slideshow Function ==========
 // Next/previous controls
@@ -142,6 +147,9 @@ function validateForm() {
 
 function subscribe() {
   // Validate form here if needed
+  if (!validateForm()) {
+    return; // Stop the function if validation fails
+  }
 
   // Show alert after form submission
   alert("You subscribed!");
