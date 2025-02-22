@@ -1,0 +1,48 @@
+Big Data - Sesi 3
+
+################################ Note
+Linux:
+Angka 4 = punya permission untuk Read
+Angka 2 = punya permission untuk Write
+Angka 1 = punya permission untuk Execute
+
+4 + 2 + 1 = 7
+chmod -R 777 : kondisi untuk semua orang permission
+
+
+################################ Terminal
+[Desktop] hadoop fs -copyFromLocal RamenShop/
+[Desktop] hadoop fs -ls
+
+[Desktop] hadoop fs -chmod -R 777 /user/cloudera
+
+
+################################ Hue Impala/Hive
+create database RamenShop
+
+create external table MsCustomer (
+    CustomerID int,
+    CustomerName varchar(255),
+    CustomerPhone varchar(255),
+    CustomerEmail varchar(255)
+)
+
+row format delimited
+fields terminated by ','
+tblproperties ('skip.header.line.count' =  '1')
+
+load data  inpath '/user/cloudera/RamenShop/MsCustomer.csv' into table MsCustomer
+
+select * from MsCustomer
+
+
+################################# Sqoop
+[Desktop] mysql -u root -p 
+password: cloudera
+
+[mysql] create database RamenShop;
+[mysql] use RamenShop;
+[mysql] source RamenShop/create+insert.sql
+[mysql] selet * from MsBrand;
+[mysql] Ctrl-C -- exit
+[Desktop] sudo sqoop import-all-tables --connect jdbc:mysql://quickstart:3306/RamenShop --username=root -P --hive-import --hive-database=RamenShop
